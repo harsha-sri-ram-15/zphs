@@ -1,0 +1,19 @@
+.greet-box.fade-slide,
+.img-box.fade-slide {
+  opacity: 0;
+  transform: translateY(-40px);
+  pointer-events: none;
+  transition: opacity 0.6s cubic-bezier(0.4,0,0.2,1), transform 0.6s cubic-bezier(0.4,0,0.2,1);
+}
+.greet-box.fade-slide.show,
+.img-box.fade-slide.show {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+.greet-box.fade-slide.hide,
+.img-box.fade-slide.hide {
+  opacity: 0;
+  transform: translateY(-40px);
+  pointer-events: none;
+}
