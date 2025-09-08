@@ -57,7 +57,7 @@ const Home = () => {
       photo: "/images/director_pic.jpg",
     },
     {
-      name: "Sri S.Subhashini",
+      name: "Smt S.Subhashini",
       designation: "Additional project Co ordinator SS,",
       designation2: "EAST GODAVARI",
       photo: "/images/subhashini.jpg",
