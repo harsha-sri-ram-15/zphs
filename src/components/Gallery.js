@@ -3,95 +3,131 @@ import React, { useState, useEffect } from 'react';
 // Update these with your actual image filenames and descriptions
 const images = [
   {
-    src: '/ssc_results2425.jpg',
+    src: '/images/ssc_results2425.jpg',
     alt: 'SSC 24-25 Results Celebrations',
     description: 'Secured Mandal 1st and 3rd positions in SSC 2024-25',
   },
   {
-    src: '/dist_scfair_2324.jpg',
+    src: '/images/dist_scfair_2324.jpg',
     alt: 'Selected to State Level Science Fair',
     description: 'Selected to State Level Science Fair 2023-24',
   },
   {
-    src: '/mathsday_2324.jpg',
+    src: '/images/mathsday_2324.jpg',
     alt: 'Maths day',
     description: 'Maths Day Celebrations 2023-24',
   },
   {
-    src: '/ssc_results2324.jpg',
+    src: '/images/ssc_results2324.jpg',
     alt: 'ssc results 2023',
     description: 'Secured Mandal 1st position in SSC 2023-24',
   },
   {
-    src: '/tlm.jpg',
+    src: '/images/tlm.jpg',
     alt: 'tlm',
     description: 'TLM exhibition 2024-25',
   },
   {
-    src: '/delhi15.jpg',
+    src: '/images/delhi15.jpg',
     alt: 'delhi',
     description: 'Attended 75th Independence Day celebrations at Red Fort as a special guest',
   },
   {
-    src: '/ambani_2324.jpg',
+    src: '/images/ambani_2324.jpg',
     alt: 'ambani 22324',
     description: 'Secured 3rd position in Reliance Quiz 2023-24',
   },
   {
-    src: '/koushal_2425.jpg',
+    src: '/images/koushal_2425.jpg',
     alt: 'koushal 2425',
     description: 'Participated in Koushal Competition, 2024',
   },
   {
-    src: '/koushal_st2.jpg',
+    src: '/images/koushal_st2.jpg',
     alt: 'koushal 2425',
     description: 'Secured state 2nd in Poster presentation, Koushal Competition 2024',
   },
   {
-    src: '/scoutsguides.jpg',
+    src: '/images/scoutsguides.jpg',
     alt: 'scouts 2425',
     description: 'Established Scouts and Guides in Academic year 2025',
   },
   {
-    src: '/ambani_2425.jpg',
+    src: '/images/ambani_2425.jpg',
     alt: 'ambani 2425',
     description: 'Secured 3rd place in Reliance Quiz 2024-25',
   },
   {
-    src: '/ssc_toppers.jpg',
+    src: '/images/ssc_toppers.jpg',
     alt: 'ssc 2425',
     description: 'Students, who secured above 500 marks in SSC 2024-25 (23 in total)',
   },
   {
-    src: '/koushal_2324.jpg',
+    src: '/images/koushal_2324.jpg',
     alt: 'koushal 2324',
     description: 'Participated in Dist. Level Koushal Quiz Competition 2023-24',
   },
   {
-    src: '/yoga.jpg',
+    src: '/images/yoga.jpg',
     alt: 'yoga',
     description: 'Participated in Yogandhra 2025',
   },
   {
-    src: '/eemt.jpg',
+    src: '/images/eemt.jpg',
     alt: 'eemt',
     description: 'Secured District 1st in EEMT 2023-24',
   },
   {
-    src: '/diary.jpg',
+    src: '/images/diary.jpg',
     alt: 'diary',
     description: 'School diary inaugaration by Dy.E.O sir',
   },
   {
-    src: '/idcard.jpg',
+    src: '/images/idcard.jpg',
     alt: 'idcard',
     description: 'ID card distribution by D.E.O sir',
   },
   {
-    src: '/inspire.jpg',
+    src: '/images/inspire.jpg',
     alt: 'inspire',
     description: 'Participated at National level Inspire Manak Competition at Delhi 2024-25',
   },
+  {
+    src: '/images/collector.jpg',
+    alt: 'collector',
+    description: 'District Collecter madam appreciation  INSPIRE MANAK project selected to NATIONAL level',
+  },
+  {
+    src: '/images/rjd.jpg',
+    alt: 'rjd',
+    description: 'RJD madam with our scouts and guides',
+  },
+  {
+    src: '/images/deoscoutsguides.jpg',
+    alt: 'deoscoutsguides',
+    description: 'DEO sir with our scouts and guides',
+  },
+  {
+    src: '/images/megaptmprize.jpg',
+    alt: 'megaptmprize',
+    description: 'Rajanagaram constituiency MLA sir prize distribution on Mega PTM.2.0',
+  },
+  {
+    src: '/images/nationalization.jpg',
+    alt: 'nationalization',
+    description: 'Nationalization of PMShri zpphs Raghudevapuram school by RUDA chairman sri B Venkata Ramana Choudhary',
+  },
+  {
+    src: '/images/jcmla.jpg',
+    alt: 'jcmla',
+    description: 'MLA sir and Joint Collector attended to MEGA PTM 2.0',
+  },
+  {
+    src: '/images/dcmpkproject.jpg',
+    alt: 'dcmpkproject',
+    description: 'Deputy CM Pawan Kalyan sir appreciated our ATL project on the eve of opening of Science Hub at Rajahmundry',
+  },
+  
 
 
   // Add more images as needed

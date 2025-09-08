@@ -8,7 +8,7 @@ function Layout({ children }) {
         style={{
           minHeight: '100vh',
           width: '100vw',
-          backgroundImage: 'url("/school_bg.jpg")',
+          backgroundImage: 'url("/images/school_bg.jpg")',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat',

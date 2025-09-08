@@ -1,193 +1,204 @@
-import React, { useState } from 'react';
-import './Home.css';
+import React, { useEffect } from "react";
 
-const persons = [
-  {
-    name: "Sri N. Chandrababu Naidu",
-    designation: "Hon'ble Chief Minister,",
-    designation2: "Government of Andhra Pradesh",
-    photo: "/cbn_pic.jpg",
-  },
-  {
-    name: "Sri K. Pawan Kalyan",
-    designation: "Hon'ble Deputy Chief Minister,",
-    designation2: "Government of Andhra Pradesh",
-    photo: "/pk_pic.jpg",
-  },
-  {
-    name: "Sri Nara Lokesh",
-    designation: "Hon'ble Education Minister,",
-    designation2: "Government of Andhra Pradesh",
-    photo: "/lokesh_pic.jpg",
-  },
-  {
-    name: "Sri V. Vijay Rama Raju",
-    designation: "Director of School Education Department,",
-    designation2: "Government of Andhra Pradesh",
-    photo: "/director_pic.jpg",
-  },
-  {
-    name: "Sri K. Vasudeva Rao",
-    designation: "District Educational Officer,",
-    designation2: "East Godavari",
-    photo: "/deo_pic.jpeg",
-  },
-];
+const Home = () => {
+  // fallback SVG (used when an image is missing)
+  const fallbackSvg =
+    'data:image/svg+xml;utf8,' +
+    encodeURIComponent(
+      `<svg xmlns="http://www.w3.org/2000/svg" width="120" height="120" viewBox="0 0 120 120">
+         <rect width="100%" height="100%" fill="#eeeeee"/>
+         <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" font-size="12" fill="#666">No Image</text>
+       </svg>`
+    );
 
-function Home() {
-  const [visible, setVisible] = useState(true);
+  // Sets the background image to the body for full coverage
+  useEffect(() => {
+    const prev = document.body.style.background;
+    document.body.style.background = "url('/images/school_bg.jpg') center center / cover no-repeat fixed";
+    document.body.style.minHeight = "100vh";
+    document.body.style.width = "100%";
+    // Clean up: Restore previous background when unmounting
+    return () => {
+      document.body.style.background = prev;
+      document.body.style.minHeight = "";
+      document.body.style.width = "";
+    };
+  }, []);
 
-  const toggleVisibility = () => setVisible((v) => !v);
+  const persons = [
+    {
+      name: "Sri N. Chandrababu Naidu",
+      designation: "Hon'ble Chief Minister,",
+      designation2: "Government of Andhra Pradesh",
+      photo: "/images/cbn_pic.jpg",
+    },
+    {
+      name: "Sri K. Pawan Kalyan",
+      designation: "Hon'ble Deputy Chief Minister,",
+      designation2: "Government of Andhra Pradesh",
+      photo: "/images/pk_pic.jpg",
+    },
+    {
+      name: "Sri Nara Lokesh",
+      designation: "Hon'ble Education Minister,",
+      designation2: "Government of Andhra Pradesh",
+      photo: "/images/lokesh_pic.jpg",
+    },
+    {
+      name: "Sri B. Srininivasa Rao",
+      designation: "State project director samagra siksha,",
+      designation2: "Government of Andhra Pradesh",
+      photo: "/images/srinivas_rao.jpg",
+    },
+    {
+      name: "Sri V. Vijaya Ram Raju",
+      designation: "Director of School Education Department,",
+      designation2: "Government of Andhra Pradesh",
+      photo: "/images/director_pic.jpg",
+    },
+    {
+      name: "Sri S.Subhashini",
+      designation: "Additional project Co ordinator SS,",
+      designation2: "EAST GODAVARI",
+      photo: "/images/subhashini.jpg",
+    },
+    {
+      name: "Sri K. Vasudeva Rao",
+      designation: "District Educational Officer,",
+      designation2: "East Godavari",
+      photo: "/images/deo_pic.jpeg",
+    },
+  ];
 
   return (
-    <div
-      style={{
-        minHeight: '100vh',
-        width: '100vw',
-        backgroundImage: 'url("/school-bg.jpg")',
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        backgroundRepeat: 'no-repeat',
-        position: 'fixed',
-        top: 0,
-        left: 0,
-        zIndex: -1,
-      }}
-      onClick={toggleVisibility}
-    >
-      {/* Top Yellow Greet Box */}
+    <div style={{ minHeight: "100vh", padding: "2rem 1rem", width: "100%", boxSizing: "border-box" }}>
+      {/* Greeting Box */}
       <div
-        className={`greet-box fade-slide ${visible ? 'show' : 'hide'}`}
         style={{
-          position: 'relative',
-          zIndex: 2,
-          maxWidth: '900px',
-          margin: '20px auto 0 auto',
-          padding: '2rem 1rem',
-          background: 'rgba(255, 236, 179, 0.92)',
-          color: '#1a237e',
-          borderRadius: '16px',
-          boxShadow: '0 4px 24px rgba(0,0,0,0.07)',
-          transition: 'box-shadow 0.3s',
-          fontSize: '1rem',
-          marginBottom: '50px',
+          maxWidth: "1100px",
+          margin: "0 auto 2rem auto",
+          padding: "2rem",
+          textAlign: "left",
+          background: "rgba(255, 235, 170, 0.95)",
+          borderRadius: "18px",
         }}
       >
-        <h1>Greetings!!</h1>
-        <p>
-          We are delighted to welcome you to our school website.<br />
-          Explore our vibrant learning community and discover what makes us unique.<br />
+        <h2 style={{ fontSize: "2rem", fontWeight: "bold", color: "#1a237e" }}>
+          Greetings!!
+        </h2>
+        <p style={{ fontSize: "1.1rem", lineHeight: "1.6", color: "#333" }}>
+          We are delighted to welcome you to our school website.
+          <br />
+          Explore our vibrant learning community and discover what makes us unique.
+          <br />
           We look forward to sharing our achievements and memorable events with you.
         </p>
-        <h2>About Us</h2>
-        <p>
-          At ZPHS Raghudevapuram, we are proud of our students’ accomplishments and the vibrant events that shape our school life.
-          To see our proudest moments, visit the <strong>Achievements</strong> page. For photos and memories, check out our <strong>Gallery</strong> page.
+        <h3 style={{ fontSize: "1.5rem", fontWeight: "bold", color: "#1a237e" }}>
+          About Us
+        </h3>
+        <p style={{ fontSize: "1rem", lineHeight: "1.6", color: "#333" }}>
+          At ZPHS Raghudevapuram, we are proud of our students’ accomplishments
+          and the vibrant events that shape our school life. To see our proudest
+          moments, visit the <b>Achievements</b> page. For photos and memories,
+          check out our <b>Gallery</b> page.
         </p>
       </div>
 
-      {/* Bottom Yellow Box for 5 Images with Horizontal Scroll */}
+      {/* Persons Grid */}
       <div
-        className={`img-box fade-slide ${visible ? 'show' : 'hide'}`}
         style={{
-          margin: '40px auto 0 auto',
-          background: 'rgba(255, 236, 179, 0.96)',
-          borderRadius: '16px',
-          boxShadow: '0 2px 12px rgba(0,0,0,0.10)',
-          maxWidth: '1200px',
-          padding: '2rem 1.5rem',
-          transition: 'box-shadow 0.3s',
-          display: 'flex',
-          flexDirection: 'row',
-          alignItems: 'flex-start',
-          justifyContent: 'flex-start',
-          gap: '2.2rem',
-          marginBottom: '230px',
-          overflowX: 'auto',           // Enable horizontal scroll
-          overflowY: 'hidden',
+          maxWidth: "1100px",
+          margin: "0 auto",
+          background: "rgba(255, 235, 170, 0.95)",
+          borderRadius: "18px",
+          padding: "2rem",
         }}
       >
-        {persons.map((person, idx) => (
-          <div
-            key={idx}
-            style={{
-              display: 'flex',
-              flexDirection: 'column',
-              alignItems: 'center',
-              background: 'rgba(255,255,255,0.82)',
-              borderRadius: '14px',
-              boxShadow: '0 1px 6px rgba(0,0,0,0.08)',
-              padding: '1.2rem 1.2rem',
-              width: '200px',        // Wider for more text
-              minWidth: '200px',
-              maxWidth: '200px',
-              height: '210px',        // Allow height to grow with content
-              boxSizing: 'border-box',
-              justifyContent: 'flex-start',
-              marginBottom: 0,
-              flexShrink: 0,         // Prevent shrinking in scroll
-            }}
-          >
-            <img
-              src={person.photo}
-              alt={person.name}
-              style={{
-                width: '60px',
-                height: '60px',
-                objectFit: 'cover',
-                borderRadius: '50%',
-                marginBottom: '1rem',
-                background: '#eee'
-              }}
-            />
-            <div style={{ textAlign: 'center', width: '100%' }}>
-              <div style={{
-                fontWeight: 700,
-                fontSize: '0.95rem',
-                marginBottom: '0.2rem',
-                color: '#1a237e',
-                wordBreak: 'break-word',
-                whiteSpace: 'normal',
-                overflow: 'visible',
-                textOverflow: 'clip',
-              }}>
-                {person.name}
-              </div>
-              <div style={{
-                fontWeight: 500,
-                fontSize: '0.75rem',
-                color: '#444',
-                wordBreak: 'break-word',
-                whiteSpace: 'normal',
-                overflow: 'visible',
-                textOverflow: 'clip',
-              }}>
-                {person.designation}
-              </div>
-              {person.designation2 && (
-                <div style={{
-                  fontWeight: 500,
-                  fontSize: '0.75rem',
-                  color: '#444',
-                  wordBreak: 'break-word',
-                  whiteSpace: 'normal',
-                  overflow: 'visible',
-                  textOverflow: 'clip',
-                  marginTop: '0.15rem'
-                }}>
-                  {person.designation2}
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(3, 1fr)",
+            gap: "2rem",
+            justifyItems: "center",
+          }}
+        >
+          {persons.map((person, idx) => {
+            const isLastSingle =
+              idx === persons.length - 1 && persons.length % 3 === 1;
+            return (
+              <div
+                key={idx}
+                style={{
+                  display: "flex",
+                  flexDirection: "column",
+                  alignItems: "center",
+                  background: "rgba(255,255,255,0.95)",
+                  borderRadius: "14px",
+                  boxShadow: "0 1px 6px rgba(0,0,0,0.08)",
+                  padding: "1.2rem",
+                  width: "220px",
+                  height: "240px",
+                  justifyContent: "flex-start",
+                  gridColumn: isLastSingle ? "2 / span 1" : "auto",
+                }}
+              >
+                <img
+                  src={person.photo}
+                  alt={person.name}
+                  onError={e => {
+                    e.currentTarget.onerror = null;
+                    e.currentTarget.src = fallbackSvg;
+                  }}
+                  style={{
+                    width: "80px",
+                    height: "80px",
+                    objectFit: "cover",
+                    borderRadius: "50%",
+                    marginBottom: "1rem",
+                    display: "block",
+                    background: "#eee",
+                  }}
+                />
+                <div style={{ textAlign: "center" }}>
+                  <div
+                    style={{
+                      fontWeight: 700,
+                      fontSize: "1rem",
+                      marginBottom: "0.4rem",
+                      color: "#1a237e",
+                    }}
+                  >
+                    {person.name}
+                  </div>
+                  <div
+                    style={{
+                      fontWeight: 500,
+                      fontSize: "0.85rem",
+                      color: "#444",
+                    }}
+                  >
+                    {person.designation}
+                  </div>
+                  {person.designation2 && (
+                    <div
+                      style={{
+                        fontWeight: 500,
+                        fontSize: "0.85rem",
+                        color: "#444",
+                        marginTop: "0.25rem",
+                      }}
+                    >
+                      {person.designation2}
+                    </div>
+                  )}
                 </div>
-              )}
-            </div>
-          </div>
-        ))}
-      </div>
-
-      <div style={{ marginTop: '1rem', fontSize: '0.95rem', color: '#444', textAlign: 'center' }}>
-        (Scroll horizontally to see all names and designations. Click anywhere to hide/show both boxes!)
+              </div>
+            );
+          })}
+        </div>
       </div>
     </div>
   );
-}
+};
 
 export default Home;

@@ -23,7 +23,7 @@ function Footer() {
       {/* Left side: logo and copyright */}
       <div style={{ display: 'flex', alignItems: 'center' }}>
         <img
-          src="/bseap_logo.png"
+          src="/images/bseap_logo.png"
           alt="AP Government Logo"
           style={{
             height: '36px',
